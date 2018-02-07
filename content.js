@@ -1,6 +1,9 @@
+const hostname = 'XXXXX'
+const timeout = 600000
+
 // eslint-disable-next-line no-console
 console.log("Reload extension -> " + location.hostname);
 
-if(location.hostname === "wwwapps.ups.com"){
-	setTimeout(function(){ location.reload(); }, 60000);
+if(location.hostname === hostname){
+	setTimeout(function(){ location.reload(); }, timout);
 }
