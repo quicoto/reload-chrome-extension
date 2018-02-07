@@ -1,0 +1,97 @@
+{
+  "root": true,
+  "extends": [
+    "airbnb-base",
+    "plugin:vue/recommended"
+  ],
+  "plugins": [
+    "jest",
+    "compat"
+  ],
+  "settings": {
+    "polyfills": ["promises"]
+  },
+  "globals": {
+    "WEBPACK_VARIABLE_IS_PRODUCTION": true
+  },
+  "rules": {
+    "valid-jsdoc": ["error", {
+      "prefer": {
+        "arg": "param",
+        "argument": "param",
+        "class": "constructor",
+        "return": "return",
+        "virtual": "abstract"
+      },
+      "preferType": {
+        "Function": "function",
+        "Boolean": "boolean",
+        "Number": "number",
+        "object": "object",
+        "String": "string"
+      },
+      "requireReturn": false,
+      "requireParamDescription": false,
+      "requireReturnDescription": false
+    }],
+    "quotes": ["error", "backtick"],
+    "no-param-reassign": ["error", { "props": false }],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
+      { "blankLine": "any",    "prev": ["const", "let", "var"], "next": ["const", "let", "var"]},
+      { "blankLine": "always", "prev": "directive", "next": "*" },
+      { "blankLine": "any",    "prev": "directive", "next": "directive" }
+    ],
+    "comma-dangle": ["error", "never"],
+    "no-multiple-empty-lines": ["error", { "max": 1 } ],
+    "max-len": [
+      "error",
+      {
+        "ignoreUrls": true,
+        "code": 100
+      }
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "sort-keys": ["error", "asc", {"caseSensitive": true, "natural": true}],
+
+    // overwrite/extend airbnb-eslint rules
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+    // deactivated airbnb-eslint rules
+    "function-paren-newline": "off",
+    "no-plusplus": "off",
+    "no-underscore-dangle": "off",
+    "global-require": "off",
+    "func-names": "off",
+    "prefer-destructuring": "off",
+
+    // plugin-import
+    // deactivated rules, mostly because they doesn't play well with webpack
+    "import/extensions": "off",
+    "import/no-absolute-path": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-duplicates": "off",
+    "import/no-named-as-default": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "import/no-dynamic-require": "off",
+
+    // plugin-jest
+    "jest/no-disabled-tests": "error",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/valid-expect": "error",
+
+    // plugin compat
+    "compat/compat": "error"
+  },
+  "env": {
+    "jest": true,
+    "browser": true
+  }
+}
